@@ -9,14 +9,15 @@ body {
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
 }
 
 main {
+    position: relative;
     display: flex;
     height: 80vh;
     margin: 0 20px;
@@ -25,7 +26,6 @@ main {
 .input-container {
     width: 70%;
     margin: 20px 40px 0 40px;
-    
 }
 
 .input-resolver-container {
@@ -34,29 +34,18 @@ main {
     box-shadow: 5px 5px 15px #0000001a;
     padding: 10px 20px;
     width: 30%;
-    
-}
-@media (max-width: 600px) {
-    main {
-        display: block;
-    }
-
-    .input-container {
-        width: 100%;
-        margin: 0;
-    }
-
-    .input-resolver-container {
-        width: 100%;
-        padding: 0;
-        margin-top: 20px;
-    }
-
-    .input-resolver-container .empty-message .content {
-        padding: 20px;
-    }
 
 }
+
+
+
+.text-result-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 98%;
+}
+
 .input-resolver-container .empty-message {
     text-align: center;
     height: 100%;
@@ -79,6 +68,7 @@ main {
     margin-right: 6px;
     color: #495057;
 }
+
 .info-container p {
     font-size: 12px;
     font-weight: 400;
@@ -147,4 +137,82 @@ main {
 
 .navbar {
     padding: 15px 0;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text-copy-alert {
+    position: absolute;
+    animation: alert 2s linear forwards;
+    display: none;
+    top: 0;
+    left: 50%;
+    background-color: #0b3871;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 24px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.active-alert {
+    display: block;
+}
+
+@keyframes alert {
+    0% {
+        top: -200px;
+        opacity: 0%;
+    }
+
+    20% {
+        top: -50px;
+        opacity: 100%;
+    }
+
+    60% {
+        top: -50px;
+        opacity: 100%;
+    }
+
+    100% {
+        top: -200px;
+        opacity: 0%;
+    }
+
+}
+
+@media (max-width: 600px) {
+    main {
+        display: block;
+    }
+
+    .input-container {
+        width: 100%;
+        margin: 0;
+        height: 40%;
+    }
+
+    .input-resolver-container {
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+        height: 60%;
+    }
+
+    .input-resolver-container .empty-message .content {
+        padding: 20px;
+    }
+
+    .text-result-container {
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90%;
+    }
+
 }

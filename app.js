@@ -2,6 +2,7 @@ const textInputForm = document.getElementById('textEncryptor');
 const encryptorBtn = document.getElementById('encryptorBtn');
 const decryptorBtn = document.getElementById('decryptorBtn');
 const textContainer = document.querySelector('.input-resolver-container');
+const copyAlert = document.querySelector('.text-copy-alert')
 
 function createTextDiv(newText) {
     let newDiv = document.createElement('div');
@@ -9,8 +10,23 @@ function createTextDiv(newText) {
     let newResultText = document.createElement('p');
     newResultText.classList.add('result-text');
     newResultText.textContent = newText;
+    let copyButton = document.createElement('button');
+    copyButton.classList.add('secondary-btn', 'w-100', 'copy-btn');
+    copyButton.textContent = 'Copiar';
     newDiv.appendChild(newResultText);
+    newDiv.appendChild(copyButton);
     textContainer.appendChild(newDiv);
+
+    let copyBtn = document.querySelector('.copy-btn');
+
+    copyBtn.addEventListener('click', function () {
+        copyAlert.classList.add('active-alert');
+        setTimeout(function () {
+            copyAlert.classList.remove('active-alert');
+            console.log('removido');
+        }, 1900);
+        copyCode();
+    });
 }
 
 function encryptText(value) {
@@ -91,3 +107,15 @@ decryptorBtn.addEventListener('click', function (e) {
     decryptText(inputText.value);
     inputText.value = '';
 });
+
+const copyCode = async () => {
+    let generatedText = document.querySelector('.result-text');
+    const textContent = generatedText.textContent;
+    try {
+        navigator.clipboard.writeText(textContent);
+        console.log('Se copio el codigo: ' + textContent)
+    }
+    catch (err) {
+        console.log('No se copio el texto')
+    }
+} 
