@@ -1,0 +1,150 @@
+:root {
+    --light-blue: #F3F5FC;
+    --dark-blue: #0A3871;
+}
+
+body {
+    background-color: var(--light-blue);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+main {
+    display: flex;
+    height: 80vh;
+    margin: 0 20px;
+}
+
+.input-container {
+    width: 70%;
+    margin: 20px 40px 0 40px;
+    
+}
+
+.input-resolver-container {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px #0000001a;
+    padding: 10px 20px;
+    width: 30%;
+    
+}
+@media (max-width: 600px) {
+    main {
+        display: block;
+    }
+
+    .input-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .input-resolver-container {
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .input-resolver-container .empty-message .content {
+        padding: 20px;
+    }
+
+}
+.input-resolver-container .empty-message {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-resolver-container .empty-message img {
+    width: 80%;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+}
+
+.info-container .material-symbols-outlined {
+    margin-right: 6px;
+    color: #495057;
+}
+.info-container p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #495057;
+}
+
+.hide {
+    display: none;
+}
+
+#textEncryptor {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#inputText {
+    background-color: var(--light-blue);
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+#inputText:focus-visible {
+    border: none;
+    outline: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.primary-btn {
+    background-color: var(--dark-blue);
+    border-radius: 24px;
+    border: solid 1px var(--dark-blue);
+    padding: 20px 24px;
+    color: #fff;
+    width: 50%;
+    margin: 0 5px;
+    transition: all .15s linear;
+}
+
+.primary-btn:hover {
+    opacity: .8;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border-radius: 24px;
+    border: solid 1px var(--dark-blue);
+    padding: 20px 24px;
+    color: var(--dark-blue);
+    width: 50%;
+    margin: 0 5px;
+    transition: all .15s linear;
+}
+
+.secondary-btn:hover {
+    background-color: var(--dark-blue);
+    color: #fff;
+    opacity: .5;
+}
+
+.navbar {
+    padding: 15px 0;
+}
