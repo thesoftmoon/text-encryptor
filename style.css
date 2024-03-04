@@ -1,6 +1,7 @@
 :root {
     --light-blue: #F3F5FC;
     --dark-blue: #0A3871;
+    --light-gray: #495057;
 }
 
 body {
@@ -53,6 +54,10 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.input-resolver-container {
+    color: var(--light-gray);
 }
 
 .input-resolver-container .empty-message img {
@@ -193,14 +198,14 @@ main {
     .input-container {
         width: 100%;
         margin: 0;
-        height: 40%;
+        height: 60%;
     }
 
     .input-resolver-container {
         width: 100%;
         padding: 0;
         margin-top: 20px;
-        height: 60%;
+        height: 40%;
     }
 
     .input-resolver-container .empty-message .content {
@@ -213,6 +218,10 @@ main {
         flex-direction: column;
         justify-content: space-between;
         height: 90%;
+    }
+
+    .input-resolver-container .empty-message img {
+        display: none;
     }
 
 }

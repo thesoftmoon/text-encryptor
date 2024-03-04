@@ -23,7 +23,6 @@ function createTextDiv(newText) {
         copyAlert.classList.add('active-alert');
         setTimeout(function () {
             copyAlert.classList.remove('active-alert');
-            console.log('removido');
         }, 1900);
         copyCode();
     });
@@ -113,9 +112,8 @@ const copyCode = async () => {
     const textContent = generatedText.textContent;
     try {
         navigator.clipboard.writeText(textContent);
-        console.log('Se copio el codigo: ' + textContent)
     }
     catch (err) {
-        console.log('No se copio el texto')
+        console.log(`Error al copiar ${err}`)
     }
 } 
